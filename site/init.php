@@ -3,6 +3,7 @@ session_start();
 require_once "core/App.php";
 require_once "core/Controller.php";
 require_once "includes/functions.php";
+require_once "includes/secrets.php"
 
 define('STATIC',
   'http://' . $_SERVER['HTTP_HOST'] .
@@ -11,10 +12,10 @@ define('STATIC',
 
 $GLOBALS['config'] = array(
   'mysql' => array(
-    'host' => '127.0.0.1',
-    'username' => 'root',
-    'password' => 'yUTztz5K',
-    'db' => 'mil_music'
+    'host' => "$DB_HOST",
+    'username' => "$DB_USER",
+    'password' => "$DB_PASS",
+    'db' => "$DB_NAME"
   ),
   'remember' => array(
     'cookie_name' => 'hash',
